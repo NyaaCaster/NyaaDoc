@@ -1,2 +1,2 @@
 # NyaaDoc
-This website is built using Docusaurus(https://docusaurus.io/) on netlify(https://www.netlify.com/).
+This website is built using [Docusaurus](https://docusaurus.io/) on [Netlify](https://www.netlify.com/).
