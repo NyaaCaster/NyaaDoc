@@ -1,0 +1,50 @@
+# ===== 环境与密钥（绝不提交）=====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# ===== 参考资料（不纳入版本管理）=====
+.ref/
+
+# ===== Node / 前端构建产物 =====
+node_modules/
+dist/
+build/
+.vite/
+*.tsbuildinfo
+pnpm-debug.log*
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# ===== Docker / 本地数据卷 =====
+data/
+db_data/
+redis_data/
+storage/
+*.dump
+*.sql
+
+# ===== 日志与临时文件 =====
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# ===== 编辑器与系统 =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== Claude Code =====
+.claude/settings.local.json
+.claude/worktrees/

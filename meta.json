@@ -1,0 +1,35 @@
+{
+  "name": "NyaaDoc",
+  "displayName": "NyaaDoc",
+  "description": "基于 Docmost 的自托管知识库文档站（二次开发发行版）",
+  "repository": "https://github.com/NyaaCaster/NyaaDoc.git",
+  "defaultBranch": "main",
+  "license": "AGPL-3.0",
+  "upstream": {
+    "project": "docmost/docmost",
+    "repository": "https://github.com/docmost/docmost",
+    "version": "v0.96.0",
+    "image": "docmost/docmost:0.96.0",
+    "digest": "sha256:b56947fcfd08aab8fae12a377e1792784786adbf8b96e4281f14ef4fc072685a",
+    "lockPolicy": "digest"
+  },
+  "image": {
+    "name": "nyaadoc",
+    "registryEnvVar": "PRIVATE_DOCKER_REGISTRY_HOST"
+  },
+  "ports": {
+    "container": 3000,
+    "host": 3300,
+    "hostBind": "127.0.0.1",
+    "nginxHttps": 43083
+  },
+  "branding": {
+    "localesPath": "/app/apps/client/dist/locales",
+    "iconsPath": "/app/apps/client/dist/icons"
+  },
+  "blessing": "Nyaa be with you.",
+  "deploy": {
+    "macminiProjectDir": "/root/DockerContainer/NyaaDoc",
+    "macminiDataDir": "/root/DockerContainer/DockerRes/NyaaDoc"
+  }
+}
