@@ -25,7 +25,7 @@ V1 的成功判据：**在 macmini 上通过自有域名 HTTPS 访问 NyaaDoc，
 | 本地开发目录 | `H:\GitHub\NyaaDoc` |
 | GitHub 仓库 | `https://github.com/NyaaCaster/NyaaDoc.git`（公有，默认分支 `main`） |
 | 远端内容 | ✅ **已清空**（2026-09-18）。原 `README.md`、`docusaurus.config.js` 系该仓库早期 Docusaurus/Netlify 尝试的遗留，**与本知识库项目无关**，已删除（commit `50d5b91`、`8739fa1`）；后续**不得引用、复用或混淆**这些旧内容 |
-| 本地 Git | ⬜ **尚未初始化**（P1 处理） |
+| 本地 Git | ✅ 已初始化（分支 `main`，跟踪 `origin/main`）；提交链 `e93d28f` → 合并 `3d5a205` → 文档更新 `36a3d06` |
 | 当前阶段 | P0 立项（方案/审核/SSOT 文档已建立） |
 
 ---
