@@ -124,6 +124,7 @@ H:\GitHub\NyaaDoc\
 │   ├── verify-branding.py      # 品牌化冒烟验证（R4/R5 缓解）
 │   └── backup-db.py            # 定期 pg_dump（待拍板 D10）
 ├── Dockerfile                  # FROM docmost/docmost:0.96.0 + COPY branding
+├── LICENSE                     # AGPL-3.0（含上游 Docmost 归属 + §5(a) 修改声明）
 ├── .gitignore
 ├── .env                        # 不入 Git
 ├── meta.json                   # 项目元数据单一来源
@@ -163,7 +164,7 @@ H:\GitHub\NyaaDoc\
 | 阶段 | 内容 | 状态 |
 |---|---|---|
 | **P0** | 立项：方案、审核、SSOT、交接文档 | ✅ 已完成 |
-| **P1** | 工程骨架与上游基线：Git 初始化、清空远端占位文件、`.gitignore`、`meta.json`、`CLAUDE.md`、拉取上游镜像并核实静态资源路径 | ⬜ 未开始 |
+| **P1** | 工程骨架与上游基线：Git 初始化、清空远端废弃文件、`.gitignore`、`meta.json`、`CLAUDE.md`、`LICENSE`、拉取上游镜像并核实静态资源路径 | 🟡 进行中 |
 | **P2** | 品牌资产与薄镜像：抓取并补全 `zh-CN` 语言包、制作图标、`Dockerfile`、`rebuild.py`、构建期路径校验、代码签名落点 | ⬜ 未开始 |
 | **P3** | 部署编排与本地验证：compose 双文件、`.env.example`、`restart.py`、`verify-branding.py`、数据库备份脚本（待拍板） | ⬜ 未开始 |
 | **P4** | macmini 上线与 HTTPS：推送镜像、部署目录、nginx `43083 ssl`、证书复用、容器不映射数据库端口 | ⬜ 未开始 |
@@ -209,12 +210,13 @@ P0 为立项阶段，无代码产物；已验证项均为**外部事实核实**�
 
 ## 十一、下一阶段推荐执行顺序（P1）
 
-1. ~~清空 `NyaaCaster/NyaaDoc` 远端废弃残留文件~~ ✅ 已完成（2026-09-18，仓库现为 0 文件）
+1. ~~清空 `NyaaCaster/NyaaDoc` 远端废弃残留文件~~ ✅ 已完成（2026-09-18）
 2. ~~建立项目级 `CLAUDE.md`~~ ✅ 已完成
-3. 建立 `.gitignore`（Python/Node/Docker/`.env`/`.ref` 全覆盖）
-4. 建立 `meta.json`（项目名、仓库、端口、镜像名、上游版本的单一来源）
-5. `docker pull docmost/docmost:0.96.0` 并进容器核实静态资源路径（**为 P2 解锁**）
-6. 本地 `git init` + 关联远端 + 首次提交（`CLAUDE.md`、`.gitignore`、`meta.json`、`.docs/` 文档）
+3. ~~建立 `.gitignore`（Python/Node/Docker/`.env`/`.ref` 全覆盖）~~ ✅ 已完成
+4. ~~建立 `meta.json`（项目元数据单一来源）~~ ✅ 已完成
+5. ~~纳入 `LICENSE`（AGPL-3.0 全文 + 上游归属 + §5(a) 修改声明）~~ ✅ 已完成
+6. ~~本地 `git init` + 关联远端 + 首次提交推送~~ ✅ 已完成（`e93d28f` → 合并 `3d5a205`）
+7. ⬜ `docker pull docmost/docmost:0.96.0` 并进容器核实 `/app/apps/client/dist/locales/` 与 `icons/` 是否存在（**为 P2 解锁**，需用户许可运行容器）
 
 ## 十二、验证命令参考
 
